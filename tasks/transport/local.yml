@@ -1,0 +1,6 @@
+---
+- name: "Artifacts stored localy"
+  set_fact:
+    oracle_instantclient_artifacts:
+      "{{ oracle_instantclient_artifacts | default([]) + [ transport_local + '/' + item ] }}"
+  loop: "{{ oracle_instantclient_packages }}"

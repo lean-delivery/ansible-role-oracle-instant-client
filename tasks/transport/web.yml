@@ -1,0 +1,17 @@
+---
+- name: "Download artifacts from web"
+  get_url:
+    url: "{{ transport_web }}/{{ item }}"
+    dest: "{{ download_path }}"
+    force: False
+  until: "'OK' in status.msg"
+  retries: 10
+  delay: 2
+  register: status
+  loop: "{{ oracle_instantclient_packages }}"
+
+- name: "Downloaded artifacts"
+  set_fact:
+    oracle_instantclient_artifacts:
+      "{{ oracle_instantclient_artifacts | default([]) + [ item.dest ] }}"
+  loop: "{{ status.results }}"
