@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: "oracle-instant-client"
+  author: "Lean Delivery Team <team@lean-delivery.com>"
+  description: "Lean Delivery Oracle Instant Client install"
+  company: "EPAM Systems"
+  issue_tracker_url: "https://github.com/lean-delivery/ansible-role-oracle-instant-client/issues"
+  license: "Apache"
+  min_ansible_version: "2.5"
+  platforms:
+    - name: "EL"
+      versions:
+        - "7"
+
+  galaxy_tags:
+    - "development"
+    - "system"
+    - "oracle"
+    - "instantclient"
+    - "database"
+
+dependencies: []

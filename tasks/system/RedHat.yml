@@ -1,0 +1,21 @@
+---
+- name: "Install requirements"
+  package:
+    name: "{{ requirements }}"
+    state: "present"
+  become: True
+
+- name: "Install packages"
+  package:
+    name: "{{ oracle_instantclient_artifacts }}"
+    state: "present"
+  become: True
+
+- name: "Add Oracle client to library path"
+  lineinfile:
+    dest: "/etc/ld.so.conf.d/oracle.conf"
+    line: "/usr/lib/oracle/12.1/client64/lib"
+    insertbefore: "BOF"
+    create: True
+  notify: "Run ldconfig"
+  become: True
