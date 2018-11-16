@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: "oracle-instant-client"
+  role_name: "oracle_instant_client"
   author: "Lean Delivery Team <team@lean-delivery.com>"
   description: "Lean Delivery Oracle Instant Client install"
   company: "EPAM Systems"
