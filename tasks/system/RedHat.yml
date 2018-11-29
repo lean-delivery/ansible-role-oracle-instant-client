@@ -14,7 +14,7 @@
 - name: "Add Oracle client to library path"
   lineinfile:
     dest: "/etc/ld.so.conf.d/oracle.conf"
-    line: "/usr/lib/oracle/12.1/client64/lib"
+    line: "{{ ld_library_path }}"
     insertbefore: "BOF"
     create: True
   notify: "Run ldconfig"
