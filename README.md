@@ -38,6 +38,7 @@ Role Variables
       - `- "oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm"`
 
   - `download_path` - local folder for downloading artifacts default: `/tmp`
+  - `ld_library_path` -  environment variable default: `"/usr/lib/oracle/12.1/client64/lib"`
 
 Dependencies
 ------------
