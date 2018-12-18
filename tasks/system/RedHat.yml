@@ -3,12 +3,20 @@
   package:
     name: "{{ requirements }}"
     state: "present"
+  register: requirements_status
+  retries: 10
+  delay: 2
+  until: requirements_status is success
   become: True
 
 - name: "Install packages"
   package:
     name: "{{ oracle_instantclient_artifacts }}"
     state: "present"
+  register: status
+  retries: 10
+  delay: 2
+  until: status is success
   become: True
 
 - name: "Add Oracle client to library path"
