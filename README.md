@@ -20,7 +20,7 @@ Requirements
   - Prepared ansible inventory file with listed VMs with python. These machines should be accessible via SSH.
 Supported CentOS 6.* and Centos 7.*
 
-  - Oracle db client version 12.1 supported oracle server version: 12.2.0, 12.1.0, 11.2.0
+  - [Client / Server interoperability support matrix for different oracle versions](https://support.oracle.com/epmos/faces/DocumentDisplay?id=207303.1)
 
 Role Variables
 --------------
