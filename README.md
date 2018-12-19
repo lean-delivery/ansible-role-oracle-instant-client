@@ -3,6 +3,9 @@ Oracle Instant Client role
 [![License](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/lean-delivery/ansible-role-sonarqube/master/LICENSE)
 [![Build Status](https://travis-ci.org/lean-delivery/ansible-role-oracle-instant-client.svg?branch=master)](https://travis-ci.org/lean-delivery/ansible-role-oracle-instant-client)
 [![Build Status](https://gitlab.com/lean-delivery/ansible-role-oracle-instant-client/badges/master/build.svg)](https://gitlab.com/lean-delivery/ansible-role-oracle-instant-client)
+[![Galaxy](https://img.shields.io/badge/galaxy-lean__delivery.oracle__instant__client-blue.svg)](https://galaxy.ansible.com/lean_delivery/oracle_instant_client)
+![Ansible](https://img.shields.io/ansible/role/d/32812.svg)
+![Ansible](https://img.shields.io/badge/dynamic/json.svg?label=min_ansible_version&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Froles%2F32812%2F&query=$.min_ansible_version)
 
 Summary
 -------
@@ -14,10 +17,10 @@ Requirements
 
   - Minimal Version of the ansible for installation: 2.5
 
-  -  Prepared ansible inventory file with listed VMs with python. These machines should be accessible via SSH.
+  - Prepared ansible inventory file with listed VMs with python. These machines should be accessible via SSH.
 Supported CentOS 6.* and Centos 7.*
 
-  -  oracle db client version 12.1 supported oracle server version: 12.2.0, 12.1.0, 11.2.0 (https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=366329397565814&id=207303.1&_afrWindowMode=0&_adf.ctrl-state=1cp26b7isr_4)
+  - [Client / Server interoperability support matrix for different oracle versions](https://support.oracle.com/epmos/faces/DocumentDisplay?id=207303.1)
 
 Role Variables
 --------------

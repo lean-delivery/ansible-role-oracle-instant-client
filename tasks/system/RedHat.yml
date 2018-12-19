@@ -1,21 +1,29 @@
 ---
-- name: "Install requirements"
-  package:
-    name: "{{ requirements }}"
-    state: "present"
-  become: True
+- name: "Install and configure Oracle instant client "
+  block:
+    - name: "Install requirements"
+      package:
+        name: "{{ requirements }}"
+        state: "present"
+      register: requirements_status
+      retries: 10
+      delay: 2
+      until: requirements_status is success
 
-- name: "Install packages"
-  package:
-    name: "{{ oracle_instantclient_artifacts }}"
-    state: "present"
-  become: True
+    - name: "Install packages"
+      package:
+        name: "{{ oracle_instantclient_artifacts }}"
+        state: "present"
+      register: status
+      retries: 10
+      delay: 2
+      until: status is success
 
-- name: "Add Oracle client to library path"
-  lineinfile:
-    dest: "/etc/ld.so.conf.d/oracle.conf"
-    line: "{{ ld_library_path }}"
-    insertbefore: "BOF"
-    create: True
-  notify: "Run ldconfig"
+    - name: "Add Oracle client to library path"
+      lineinfile:
+        dest: "/etc/ld.so.conf.d/oracle.conf"
+        line: "{{ ld_library_path }}"
+        insertbefore: "BOF"
+        create: True
+      notify: "Run ldconfig"
   become: True
